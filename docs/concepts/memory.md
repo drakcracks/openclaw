@@ -14,6 +14,39 @@ source of truth; the model only "remembers" what gets written to disk.
 Memory search tools are provided by the active memory plugin (default:
 `memory-core`). Disable memory plugins with `plugins.slots.memory = "none"`.
 
+If you want managed chat-history memory, switch to the bundled Mem0 plugin:
+
+```json5
+{
+  plugins: {
+    slots: { memory: "memory-mem0" },
+    entries: {
+      "memory-mem0": {
+        enabled: true,
+        config: {
+          apiKey: "${MEM0_API_KEY}",
+          autoCapture: true,
+          autoRecall: true,
+        },
+      },
+    },
+  },
+}
+```
+
+With `memory-mem0`, OpenClaw can auto-capture recent conversation turns to Mem0
+after successful runs and auto-recall relevant memories into context before new
+runs.
+
+To inspect token usage with Mem0 enabled, run:
+
+```bash
+openclaw mem0 telemetry --days 7
+```
+
+The report compares runs where Mem0 recall was injected vs runs without recall,
+so you can estimate token deltas from real traffic.
+
 ## Memory files (Markdown)
 
 The default workspace layout uses two memory layers:

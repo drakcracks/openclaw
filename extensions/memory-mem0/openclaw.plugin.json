@@ -1,0 +1,122 @@
+{
+  "id": "memory-mem0",
+  "kind": "memory",
+  "uiHints": {
+    "apiKey": {
+      "label": "Mem0 API Key",
+      "sensitive": true,
+      "placeholder": "m0-...",
+      "help": "API key for Mem0 (or use ${MEM0_API_KEY})"
+    },
+    "baseUrl": {
+      "label": "Mem0 Base URL",
+      "placeholder": "https://api.mem0.ai",
+      "advanced": true
+    },
+    "orgId": {
+      "label": "Org ID",
+      "advanced": true
+    },
+    "projectId": {
+      "label": "Project ID",
+      "advanced": true
+    },
+    "appId": {
+      "label": "App ID",
+      "advanced": true
+    },
+    "userIdTemplate": {
+      "label": "User ID Template",
+      "placeholder": "{agentId}:{sessionKey}",
+      "advanced": true,
+      "help": "Supports {agentId}, {sessionKey}, {sessionId}"
+    },
+    "autoCapture": {
+      "label": "Auto-Capture"
+    },
+    "autoRecall": {
+      "label": "Auto-Recall"
+    },
+    "captureMaxMessages": {
+      "label": "Capture Max Messages",
+      "advanced": true
+    },
+    "captureMaxChars": {
+      "label": "Capture Max Chars",
+      "advanced": true
+    },
+    "recallLimit": {
+      "label": "Recall Limit",
+      "advanced": true
+    },
+    "recallMinScore": {
+      "label": "Recall Min Score",
+      "advanced": true
+    },
+    "telemetryEnabled": {
+      "label": "Telemetry Enabled",
+      "advanced": true
+    },
+    "telemetryPath": {
+      "label": "Telemetry Path",
+      "advanced": true
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiKey": {
+        "type": "string"
+      },
+      "baseUrl": {
+        "type": "string"
+      },
+      "orgId": {
+        "type": "string"
+      },
+      "projectId": {
+        "type": "string"
+      },
+      "appId": {
+        "type": "string"
+      },
+      "userIdTemplate": {
+        "type": "string"
+      },
+      "autoCapture": {
+        "type": "boolean"
+      },
+      "autoRecall": {
+        "type": "boolean"
+      },
+      "captureMaxMessages": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 30
+      },
+      "captureMaxChars": {
+        "type": "number",
+        "minimum": 120,
+        "maximum": 12000
+      },
+      "recallLimit": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 12
+      },
+      "recallMinScore": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "telemetryEnabled": {
+        "type": "boolean"
+      },
+      "telemetryPath": {
+        "type": "string"
+      }
+    },
+    "required": ["apiKey"]
+  }
+}

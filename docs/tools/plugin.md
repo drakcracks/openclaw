@@ -44,6 +44,8 @@ Looking for third-party listings? See [Community plugins](/plugins/community).
 - Microsoft Teams is plugin-only as of 2026.1.15; install `@openclaw/msteams` if you use Teams.
 - Memory (Core) — bundled memory search plugin (enabled by default via `plugins.slots.memory`)
 - Memory (LanceDB) — bundled long-term memory plugin (auto-recall/capture; set `plugins.slots.memory = "memory-lancedb"`)
+- Memory (Mem0) — bundled Mem0-backed memory plugin (chat-history auto-capture + auto-recall; set `plugins.slots.memory = "memory-mem0"`)
+  - Includes optional per-run token telemetry (`mem0 telemetry`) for injected vs non-injected recall runs.
 - [Voice Call](/plugins/voice-call) — `@openclaw/voice-call`
 - [Zalo Personal](/plugins/zalouser) — `@openclaw/zalouser`
 - [Matrix](/channels/matrix) — `@openclaw/matrix`

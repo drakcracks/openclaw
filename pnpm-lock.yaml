@@ -409,6 +409,12 @@ importers:
         specifier: workspace:*
         version: link:../..
 
+  extensions/memory-mem0:
+    devDependencies:
+      openclaw:
+        specifier: workspace:*
+        version: link:../..
+
   extensions/minimax-portal-auth:
     devDependencies:
       openclaw:
